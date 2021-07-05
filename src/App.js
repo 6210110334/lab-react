@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import WordCard from './WordCard';
+import WordCard from './components/WordCard';
 
 
 const word = "Hello";
