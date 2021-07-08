@@ -8,6 +8,16 @@
   user-select: none;
  }
 
+ .font {
+   text-align: center;
+   font-size: 2em;
+ }
+ .congrade{
+   text-align: center;
+   font-size: 3em;
+   color: red;
+ }
+
  .button {
    color: white;
    background-color: blue;

@@ -41,7 +41,7 @@ export default function WordCard(props) {
             setState({ ...state, guess: '', attempt: state.attempt + 1, completed: false })
     }
 
-    const congrade = state.completed ? 'Congradturation' : ''
+    const congrade = state.completed ? 'CONGRATULATION' : ''
 
 
 
@@ -53,15 +53,6 @@ export default function WordCard(props) {
                         <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt} />)
                 }
             </div>
-            <div className='card' style=
-                {{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>
-                {state.guess}
-            </div>
-            
             <div style=
                 {{
                     display: "flex",
@@ -70,7 +61,24 @@ export default function WordCard(props) {
                 }}>
                 {'รอบที่ ' + state.attempt}
             </div>
-          
+            <div className='font' style=
+                {{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                {state.guess}
+            </div>
+            
+            
+            <div className='congrade' style=
+                {{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                {congrade}
+            </div>
 
             <div onClick={resetWord} className='button' style=
                 {{
