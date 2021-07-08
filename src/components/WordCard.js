@@ -53,6 +53,23 @@ export default function WordCard(props) {
                         <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt} />)
                 }
             </div>
+            <div className='card' style=
+                {{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                {state.guess}
+            </div>
+            
+            <div style=
+                {{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                {'รอบที่ ' + state.attempt}
+            </div>
           
 
             <div onClick={resetWord} className='button' style=
