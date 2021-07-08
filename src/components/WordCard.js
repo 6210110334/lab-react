@@ -27,7 +27,7 @@ export default function WordCard(props) {
         if (guess.length == state.word.length) {
             if (guess == state.word) {
                 console.log('yeah!')
-                setState({ ...state, completed: true })
+                setState({ ...state, guess: guess, completed: true })
             } else {
                 console.log('reset, next attempt')
                 setState({ ...state, guess: '', attempt: state.attempt + 1 })
@@ -36,14 +36,33 @@ export default function WordCard(props) {
         console.log(guess)
     }
 
+    const resetWord = b => {
+        if (state.guess != '')
+            setState({ ...state, guess: '', attempt: state.attempt + 1, completed: false })
+    }
+
+    const congrade = state.completed ? 'Congradturation' : ''
+
 
 
     return (
-        <div>
-            {
-                state.chars.map((c, i) =>
-                    <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt} />)
-            }
+        <div >
+            <div>
+                {
+                    state.chars.map((c, i) =>
+                        <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt} />)
+                }
+            </div>
+          
+
+            <div onClick={resetWord} className='button' style=
+                {{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                Reset
+            </div>
         </div>
     );
 }

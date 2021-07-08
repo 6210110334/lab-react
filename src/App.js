@@ -7,7 +7,14 @@ const word = "Hello";
 
 function App() {
     return (
-        <div>
+        <div
+            style=
+            {{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}
+        >
             <WordCard value={word} />
         </div>
     );
